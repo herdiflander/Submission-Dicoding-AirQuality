@@ -23,17 +23,20 @@ Project ini, yang diajukan untuk kursus "Belajar Analisis Data dengan Python" da
 - `README.md`: Ini adalah file dokumentasi.
 
 ## Installasi
-1. Clone repositori ini ke local machine Anda:
+1. Membuat dan Mengaktifkan Python Environment::
 ```
-git clone https://github.com/herdiflander/Submission-Dicoding-AirQuality.git
+conda create --name airquality-ds python=3.9
+conda activate airquality-ds
 ```
-2. Buka direktori project
+2. Install Paket yang Diperlukan
 ```
-cd Submission-Dicoding-AirQuality
+pip install pandas numpy scipy matplotlib seaborn streamlit statsmodels
 ```
-3. Instal paket Python yang diperlukan dengan menjalankan:
+3. Navigasikan ke Direktori Project di mana dashboard.py berada
+
+4. Menjalankan Streamlit App:
 ```
-pip install -r requirements.txt
+streamlit run dashboard.py
 ```
 
 ## Penggunaan
@@ -44,7 +47,6 @@ pip install -r requirements.txt
 3. **Visualization**: Jalankan Streamlit dashboard untuk eksplorasi data interaktif:
 
 ```
-cd Submission-Dicoding-AirQuality/dashboard
 streamlit run dashboard.py
 ```
 Akses dashboard di browser web Anda pada `http://localhost:8501`.
