@@ -23,12 +23,12 @@ Project ini, yang diajukan untuk kursus "Belajar Analisis Data dengan Python" da
 - `README.md`: Ini adalah file dokumentasi.
 
 ## Installasi
-1. Membuat dan Mengaktifkan Python Environment::
+1. Membuat dan Mengaktifkan Python Environment:
 ```
 conda create --name airquality-ds python=3.9
 conda activate airquality-ds
 ```
-2. Install Paket yang Diperlukan
+2. Install Paket yang Diperlukan:
 ```
 pip install pandas numpy scipy matplotlib seaborn streamlit statsmodels
 ```
