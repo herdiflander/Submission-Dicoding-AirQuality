@@ -29,7 +29,7 @@ st.markdown("""
 - **Dicoding ID**: [herdiansyah_3ia17](https://www.dicoding.com/users/herdiansyah_3ia17/)
 
 ### Project Overview
-Dashboard ini menyajikan analisis data kualitas udara, khususnya yang berfokus pada tingkat PM10 dari stasiun Gucheng. Proyek ini bertujuan untuk mengungkap pola, variasi musiman, dan dampak kondisi cuaca yang berbeda terhadap kualitas udara. Wawasan dari analisis ini dapat bermanfaat untuk studi lingkungan dan pemantauan kesehatan masyarakat.
+Dashboard ini menyajikan analisis data kualitas udara, khususnya yang berfokus pada tingkat PM10 dari stasiun Gucheng. Project ini bertujuan untuk mengungkap pola, variasi musiman, dan dampak kondisi cuaca yang berbeda terhadap kualitas udara. Wawasan dari analisis ini dapat bermanfaat untuk studi lingkungan dan pemantauan kesehatan masyarakat.
 """)
 
 # Menambahkan sidebar untuk input interaktif
