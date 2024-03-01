@@ -62,6 +62,18 @@ sns.heatmap(corr, annot=True, ax=ax)
 plt.title('Korelasi Heatmap')
 st.pyplot(fig)
 
+st.subheader('Pola Jangka Waktu')
+data_imputed['date'] = pd.to_datetime(data_imputed[['year', 'month', 'day', 'hour']])
+data_time_series = data_imputed[['date', 'PM10', 'NO2']].set_index('date').resample('M').mean()
+plt.figure(figsize=(15, 6))
+plt.plot(data_time_series.index, data_time_series['PM10'], label='PM10', color='blue')
+plt.plot(data_time_series.index, data_time_series['NO2'], label='NO2', color='red')
+plt.title('Konsentrasi Rata-rata Bulanan PM10 dan NO2')
+plt.xlabel('Tanggal')
+plt.ylabel('Konsentrasi')
+plt.legend()
+plt.show()
+
 # Analisis Pola Musiman
 st.subheader('Analisis Pola Musiman')
 seasonal_trends = data.groupby('bulan')['PM10'].mean()
@@ -112,16 +124,6 @@ try:
     st.pyplot(fig)
 except Exception as e:
     st.error(f"Error dalam memplotkan rata-rata per jam: {e}")
-
-# Analisis Arah Angin
-st.subheader('Analisis Arah Angin')
-wind_data = data_filtered.groupby('wd')['PM10'].mean()
-fig = plt.figure(figsize=(8, 6))
-ax = fig.add_subplot(111, polar=True)
-theta = np.linspace(0, 2 * np.pi, len(wind_data))
-bars = ax.bar(theta, wind_data.values, align='center', alpha=0.5)
-plt.title('Tingkat PM10 berdasarkan Arah Angin')
-st.pyplot(fig)
 
 # Membandingkan Curah Hujan dengan Kualitas Udara
 st.subheader('Membandingkan Curah Hujan dengan tingkat PM10')
