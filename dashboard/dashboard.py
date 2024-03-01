@@ -64,36 +64,6 @@ plt.xlabel('Month')
 plt.ylabel('Rata-rata PM10')
 st.pyplot(fig)
 
-# Correlation heatmap untuk bulan yang dipilih
-st.subheader('Korelasi Heatmap dari Indikator Kualitas Udara')
-corr = data_filtered[['PM10', 'NO2', 'SO2', 'CO', 'O3', 'TEMP', 'PRES', 'DEWP']].corr()
-fig, ax = plt.subplots()
-sns.heatmap(corr, annot=True, ax=ax)
-plt.title('Korelasi Heatmap')
-st.pyplot(fig)
-
-# Distribusi dari Polutan
-st.subheader('Distribusi Polutan')
-selected_pollutant = st.selectbox('Select Pollutant', ['PM2.5', 'PM10', 'SO2', 'NO2', 'CO'])
-fig, ax = plt.subplots()
-sns.boxplot(x='bulan', y=selected_pollutant, data=data[data['tahun'] == selected_year], ax=ax)
-st.pyplot(fig)
-
-# Dekomposisi Deret Waktu PM10
-st.subheader('Dekomposisi Deret Waktu PM10')
-try:
-    data_filtered['PM10'].ffill(inplace=True)
-    decomposed = seasonal_decompose(data_filtered['PM10'], model='additive', period=24) # Sesuaikan periode sesuai kebutuhan
-    fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(10, 8))
-    decomposed.trend.plot(ax=ax1, title='Pola')
-    decomposed.seasonal.plot(ax=ax2, title='Musiman')
-    decomposed.resid.plot(ax=ax3, title='Residu')
-    plt.tight_layout()
-    st.pyplot(fig)
-except ValueError as e:
-    st.error("Tidak dapat melakukan dekomposisi deret waktu: " + str(e))
-
-
 # Rata-rata Heatmap per jam
 st.subheader('Rata-rata PM10 per jam')
 try:
