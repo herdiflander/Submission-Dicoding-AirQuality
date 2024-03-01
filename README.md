@@ -1,8 +1,5 @@
 # Project Analisis Kualitas Udara: Stasiun Gucheng
 
-## Live Dashboard
-
-
 ## Project Overview
 Project ini, yang diajukan untuk kursus "Belajar Analisis Data dengan Python" dari Dicoding, berfokus pada analisis data kualitas udara, khususnya tingkat PM10, dari stasiun Gucheng. Tujuannya adalah untuk mengungkap pola, variasi musiman, dan dampak kondisi cuaca yang berbeda terhadap kualitas udara.
 
@@ -54,3 +51,6 @@ Akses dashboard di browser web Anda pada `http://localhost:8501`.
 
 ## Data Sources
 Dataset yang digunakan dalam proyek ini mencakup pengukuran kualitas udara dari stasiun Gucheng, dengan fokus pada tingkat PM10 dan data lingkungan terkait lainnya
+
+## Live Dashboard
+Link : https://herdiansyah.streamlit.app/
