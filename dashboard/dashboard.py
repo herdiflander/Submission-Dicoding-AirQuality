@@ -54,24 +54,6 @@ plt.xlabel('Hari dalam Sebulan')
 plt.ylabel('Konsentrasi PM10')
 st.pyplot(fig)
 
-# Correlation heatmap untuk bulan yang dipilih
-st.subheader('Korelasi Heatmap dari Indikator Kualitas Udara')
-corr = data_filtered[['PM10', 'NO2', 'SO2', 'CO', 'O3', 'TEMP', 'PRES', 'DEWP']].corr()
-fig, ax = plt.subplots()
-sns.heatmap(corr, annot=True, ax=ax)
-plt.title('Korelasi Heatmap')
-st.pyplot(fig)
-
-st.subheader('Pola Jangka Waktu')
-seasonal_trends = data_imputed.groupby('bulan')[['PM10', 'NO2']].mean()
-fig, ax = plt.subplots()
-seasonal_trends.plot(kind='line', ax=ax)
-plt.title('Rata-rata Tingkat PM10 dan NO2 Bulanan')
-plt.xlabel('Bulan')
-plt.ylabel('Rata-rata Tingkat')
-st.pyplot(fig)
-
-
 # Analisis Pola Musiman
 st.subheader('Analisis Pola Musiman')
 seasonal_trends = data.groupby('bulan')['PM10'].mean()
@@ -80,6 +62,14 @@ seasonal_trends.plot(kind='bar', color='pink', ax=ax)
 plt.title('Rata-rata Tingkat PM10 Bulanan')
 plt.xlabel('Month')
 plt.ylabel('Rata-rata PM10')
+st.pyplot(fig)
+
+# Correlation heatmap untuk bulan yang dipilih
+st.subheader('Korelasi Heatmap dari Indikator Kualitas Udara')
+corr = data_filtered[['PM10', 'NO2', 'SO2', 'CO', 'O3', 'TEMP', 'PRES', 'DEWP']].corr()
+fig, ax = plt.subplots()
+sns.heatmap(corr, annot=True, ax=ax)
+plt.title('Korelasi Heatmap')
 st.pyplot(fig)
 
 # Distribusi dari Polutan
