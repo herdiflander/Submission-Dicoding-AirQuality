@@ -54,8 +54,8 @@ plt.xlabel('Hari dalam Sebulan')
 plt.ylabel('Konsentrasi PM10')
 st.pyplot(fig)
 
-data_imputed['date'] = pd.to_datetime(data_imputed[['year', 'month', 'day', 'hour']])
-data_time_series = data_imputed[['date', 'PM10', 'NO2']].set_index('date').resample('M').mean()
+data_imputed['tanggal'] = pd.to_datetime(data_imputed[['tahun', 'bulan', 'hari', 'jam']])
+data_time_series = data_imputed[['tanggal', 'PM10', 'NO2']].set_index('tanggal').resample('M').mean()
 
 # Menampilkan plot menggunakan Streamlit
 st.subheader('Konsentrasi Rata-rata Bulanan PM10 dan NO2')
