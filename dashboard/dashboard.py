@@ -46,6 +46,14 @@ data_filtered = data[(data['tahun'] == selected_year) & (data['bulan'] == select
 st.subheader('Tinjauan Data untuk Periode yang Dipilih')
 st.write(data_filtered.describe())
 
+# Line chart untuk tingkat PM10 selama bulan yang dipilih
+st.subheader('Tingkat PM10 Harian')
+fig, ax = plt.subplots()
+ax.plot(data_filtered['hari'], data_filtered['PM10'])
+plt.xlabel('Hari dalam Sebulan')
+plt.ylabel('Konsentrasi PM10')
+st.pyplot(fig)
+
 # Analisis Pola Musiman
 st.subheader('Analisis Pola Musiman')
 seasonal_trends = data.groupby('bulan')['PM10'].mean()
@@ -54,14 +62,6 @@ seasonal_trends.plot(kind='bar', color='pink', ax=ax)
 plt.title('Rata-rata Tingkat PM10 Bulanan')
 plt.xlabel('Month')
 plt.ylabel('Rata-rata PM10')
-st.pyplot(fig)
-
-# Line chart untuk tingkat PM10 selama bulan yang dipilih
-st.subheader('Tingkat PM10 Harian')
-fig, ax = plt.subplots()
-ax.plot(data_filtered['hari'], data_filtered['PM10'])
-plt.xlabel('Hari dalam Sebulan')
-plt.ylabel('Konsentrasi PM10')
 st.pyplot(fig)
 
 # Correlation heatmap untuk bulan yang dipilih
