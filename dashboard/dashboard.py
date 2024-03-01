@@ -54,17 +54,6 @@ plt.xlabel('Hari dalam Sebulan')
 plt.ylabel('Konsentrasi PM10')
 st.pyplot(fig)
 
-st.subheader('Analisis Pola Musiman')
-seasonal_trends = data_time_series.mean()
-fig, ax = plt.subplots()
-seasonal_trends['PM10'].plot(kind='bar', color='blue', ax=ax, label='PM10')
-seasonal_trends['NO2'].plot(kind='bar', color='red', ax=ax, label='NO2')
-plt.title('Konsentrasi Rata-rata Bulanan PM10 dan NO2')
-plt.xlabel('Bulan')
-plt.ylabel('Konsentrasi')
-plt.legend()
-st.pyplot(fig)
-
 # Analisis Pola Musiman
 st.subheader('Analisis Pola Musiman')
 seasonal_trends = data.groupby('bulan')['PM10'].mean()
