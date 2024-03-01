@@ -11,7 +11,7 @@ st.set_page_config(page_title="Air Quality from Gucheng Analysis by Herdiansyah"
 
 
 # Load dataset
-data = pd.read_csv('https://github.com/herdiflander/Submission-Dicoding-AirQuality/blob/main/data/PRSA_Data_Gucheng_20130301-20170228.csv')
+data = pd.read_csv("https://github.com/herdiflander/Submission-Dicoding-AirQuality/blob/main/data/PRSA_Data_Gucheng_20130301-20170228.csv")
 
 # Judul dashboard
 st.title('Air Quality Analysis Dashboard: Stasiun Gucheng')
