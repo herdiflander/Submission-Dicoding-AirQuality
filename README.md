@@ -28,7 +28,7 @@ Project ini, yang diajukan untuk kursus "Belajar Analisis Data dengan Python" da
 ## Installasi
 1. Clone repositori ini ke local machine Anda:
 ```
-git clone https://github.com/herdiansyah_3ia17/Submission-Dicoding-AirQuality.git
+git clone https://github.com/herdiflander/Submission-Dicoding-AirQuality.git
 ```
 2. Buka direktori project
 ```
