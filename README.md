@@ -13,8 +13,6 @@ Analisis ini digunakan sebagai submission kursus untuk "Belajar Analisis Data de
 - [Penggunaan](#penggunaan)
 - [Data Sources](#data-sources)
 
-## Project Overview
-Project ini, yang diajukan untuk kursus "Belajar Analisis Data dengan Python" dari Dicoding, berfokus pada analisis data kualitas udara, khususnya tingkat PM10, dari stasiun Gucheng. Tujuannya adalah untuk mengungkap pola, variasi musiman, dan dampak kondisi cuaca yang berbeda terhadap kualitas udara.
 
 ## Project Structure
 - `dashboard/`: Direktori ini berisi dashboard.py yang digunakan untuk membuat dashboard hasil analisis data.
